@@ -22,22 +22,23 @@ user1 = User.create!({
 
 puts "creating hotels"
 
-hotel1 = Hotel.new({
+hotel1 = Hotel.create!({
   name: "Le marabou",
   address: "Nantes"
 })
 
-hotel2 = Hotel.new({
+
+hotel2 = Hotel.create!({
   name: "Le grand hotel",
   address: "Nantes"
 })
 
-hotel3 = Hotel.new({
+hotel3 = Hotel.create!({
   name: "Le petit hotel",
   address: "Nantes"
 })
 
-hotel4 = Hotel.new({
+hotel4 = Hotel.create!({
   name: "L'hotel pas cher",
   address: "Nantes"
 })
