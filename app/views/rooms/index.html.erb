@@ -1,0 +1,12 @@
+<h3>index des rooms</h3>
+
+<% @rooms.each do |room| %>
+  <div>
+    <%= link_to room_path(room) do %>
+      <%= room.hotel.name %>
+      <%= room.hotel.address %>
+      <%= room.price_per_night %>
+      <%= room.capacity %>
+    <% end %>
+  </div>
+<% end %>
