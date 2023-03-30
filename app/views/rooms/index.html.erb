@@ -1,12 +1,21 @@
-<h3>index des rooms</h3>
-
-<% @rooms.each do |room| %>
-  <div>
-    <%= link_to room_path(room) do %>
-      <%= room.hotel.name %>
-      <%= room.hotel.address %>
-      <%= room.price_per_night %>
-      <%= room.capacity %>
-    <% end %>
+<div class="row d-flex justify-content-center">
+  <% @rooms.each do |room| %>
+  <div class="card-trip col-sm-4">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <%= link_to room_path(room) do %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <h2><%= room.hotel.name %></h2>
+          <p><%= room.hotel.address %></p>
+        </div>
+        <div>
+          <p><%= pluralize(room.capacity, "personne") %></p>
+          <h2 class="card-trip-pricing"><%= room.price_per_night %></h2>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>
