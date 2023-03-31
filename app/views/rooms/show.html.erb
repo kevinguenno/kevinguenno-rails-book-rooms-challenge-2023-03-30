@@ -1,18 +1,34 @@
+<div class="card">
+  <div class="room-infos">
+    <div>
+      <%= @room.hotel.name %>
+      <%= @room.hotel.address %>
+    </div>
+    <div>
+      <%= @room.price_per_night %><p>€</p>
+      <%= pluralize(@room.capacity, "personne") %>
+    </div>
+  </div>
 
-<div>
-  <%= @room.hotel.name %>
-  <%= @room.hotel.address %>
-  <%= @room.price_per_night %>
-  <%= @room.capacity %>
-</div>
-
-<div>
-  <%= simple_form_for [@room, @booking] do |f| %>
-    <%= f.input :starts_at, html5: true, label: "Date d'arrivée", input_html: { data: { controller: "flatpickr" } } %>
-    <%= f.input :ends_at, html5: true, label: "Date de départ", input_html: { data: { controller: "flatpickr" } } %>
-    <%= f.submit "Réserver" %>
-  <% end %>
-</div>
-<div>
-  <%= link_to "Retour", rooms_path %>
+  <div class="booking-form">
+    <%= simple_form_for [@room, @booking] do |f| %>
+      <%= f.input :starts_at,
+        html5: true,
+        label: "Date d'arrivée",
+        wrapper_html: { class: "mb-4" },
+        input_html: { data: { controller: "flatpickr", id:"rangePlugin" },
+        placeholder:"Select Date..." } %>
+      <%= f.input :ends_at,
+        html5: true,
+        label: "Date de départ",
+        wrapper_html: { class: "mb-4" },
+        input_html: { data: { controller: "flatpickr" },
+        placeholder:"Select Date...",
+        id:"secondRangeInput" } %>
+      <%= f.submit "Réserver" %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "Retour", rooms_path %>
+  </div>
 </div>

@@ -12,6 +12,21 @@
 
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
+  # Flatpickr
+  config.wrappers :flatpickr, class: 'mb-6 relative' do |b|
+    b.use :html5
+    b.use :label, class: 'mb-2'
+    b.wrapper tag: :div, html: {
+      data: {
+        controller: 'flatpickr',
+        wrap: true,
+        alt_format: 'd/m/Y',
+        flatpickr_cleave_date_pattern: %w[d m Y]
+      }
+    } do |component|
+      component.use :input, class: 'w-full', placeholder: 'dd/mm/yyyy', data: { input: '' }
+    end
+  end
   # Default class for buttons
   config.button_class = 'btn'
 
