@@ -5,16 +5,26 @@
 }
 
 .room-infos {
-  width:400px;
+  width:600px;
   display:flex;
-  justify-content: space-between;
+  justify-content: start;
+  align-items: self-start;
+  position: relative;
+  min-height: 300px;
 }
 
 .booking-form {
-  width:400px;
+  width:600px;
 }
 
 .room-infos img {
   width: 400px;
-  
+}
+
+.infos{
+  align-items: self-start;
+}
+
+.infos p{
+margin: 0;
 }

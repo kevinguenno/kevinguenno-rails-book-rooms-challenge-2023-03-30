@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
+    @rooms = @rooms.sort_by { rand }
   end
 
   def show

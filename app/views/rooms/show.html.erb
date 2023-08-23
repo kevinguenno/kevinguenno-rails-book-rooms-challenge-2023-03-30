@@ -1,19 +1,21 @@
 <div class="card">
   <div class="room-infos">
-  <%= image_tag "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>
-    <div>
-      <ul><%= @room.hotel.name %></ul>
-      <ul><%= @room.hotel.address %></ul>
-
-
+    <div class="room-img">
+      <%= image_tag "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>
     </div>
-    <div>
-      <div>
-        <ul><%= @room.price_per_night %><p>€</p></ul>
-      </div>
-      <div>
-        <ul><%= pluralize(@room.capacity, "personne") %></ul>
-      </div>
+    <div class="infos d-flex flex-column mb-3">
+        <div class="d-flex p-2">
+          <h4><%= @room.hotel.name %></h2>
+        </div >
+        <div class="d-flex p-2">
+          <%= @room.hotel.address %>
+        </div>
+        <div class="d-flex p-2">
+          <%= @room.price_per_night %><p>€ /nuit</p>
+        </div>
+        <div class="d-flex p-2">
+          <%= pluralize(@room.capacity, "personne") %>
+        </div>
     </div>
   </div>
 

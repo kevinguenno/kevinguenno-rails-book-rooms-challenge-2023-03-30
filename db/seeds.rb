@@ -24,23 +24,23 @@ puts "creating hotels"
 
 hotel1 = Hotel.create!({
   name: "Le marabou",
-  address: "Nantes"
+  address: "47 Rue de la Riveterie, Nantes"
 })
 
 
 hotel2 = Hotel.create!({
   name: "Le grand hotel",
-  address: "Nantes"
+  address: "6 rue de la galissonnière, Nantes"
 })
 
 hotel3 = Hotel.create!({
   name: "Le petit hotel",
-  address: "Nantes"
+  address: "25 rue copernic, Nantes"
 })
 
 hotel4 = Hotel.create!({
   name: "L'hotel pas cher",
-  address: "Nantes"
+  address: "47 rue des ajoncs, Nantes"
 })
 
 puts "creating rooms"
